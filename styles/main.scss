@@ -1,0 +1,1030 @@
+@use 'abstracts' as *;
+@use 'abstracts' as *;
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: $main-font-family;
+}
+body{
+    overflow-x: hidden;
+}
+
+/*********************************************
+    ****************                **************
+    **************** NAVIGATION BAR **************
+    ****************                **************
+    *********************************************/
+
+
+.above-header-info{
+    position:relative;
+    width: 100%;
+    height:4vh;
+    background-color:$above-header-nav-color;
+    display:flex;
+    align-items: center;
+    padding:1rem;
+    h1{
+        font-family:$main-font-family;
+        font-size: 12px;
+        letter-spacing:1px;
+        font-weight:400;
+        font-style: normal;
+        color:$main-navbar;
+    }
+    .info-left{
+        position:absolute;
+        left:11rem;
+    }
+    .info-right{
+        position:absolute;
+        right:8rem;
+    }
+/*********************************************
+    ****************                **************
+    **************** RESPONSIVE ABOVE **************
+    ****************  HEADER INFO          **************
+    *********************************************/
+
+    @include responsive-small-med{
+        display:none;
+    }
+    @include responsive-small{
+        display: none;
+    }
+}
+header{
+    width: 100%;
+    height:13vh;    
+    background-color: $main-navbar;
+    position:relative;
+    display:flex;
+    align-items:center;
+    .logo{
+      position: absolute;
+        left:13rem;
+        width:20%;
+        height:10vh;
+        text-align:center;
+    }
+    .burger{
+        position: absolute;
+        right: 7rem;
+        display:none;
+        cursor:pointer;
+        i{
+            color:$white;
+            font-size:3.5vh;
+        }
+    }
+    .navbar{
+        position: absolute;
+        right:24rem;
+        width:35%;
+        height:10vh;
+        display:flex;
+        align-items:center;
+        font-size:15px;
+        ul{
+            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: space-evenly;
+            list-style-type: none;
+                a{
+                    color:$white;
+                    text-decoration: none;
+                &:hover{
+                    color:$active-list-item-color;
+                }
+                &::after{
+                    content:"";
+                    display:block;
+                    background-color: $underscore-list-item-color;
+                    height:1px;
+                    width:0;
+                    margin-top:1px;
+                }
+                &:hover::after{
+                    width:100%;
+                }
+                }
+        }
+    }
+    .register-btn{
+        color:$main-navbar;
+        font-size:14px; 
+        text-decoration: none;
+        position:absolute;
+        right:8rem;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color:$white;
+        box-shadow:0px 2px 0px 0px $underscore-list-item-color;   
+        border-radius:4px 4px 4px 4px;     
+        width:13%;
+        font-weight: 500; 
+        height:6.5vh;
+        transition:all .3s ease-in-out;
+       &:hover{
+           background-color:$underscore-list-item-color;
+           box-shadow:0px 2px 0px 0px $white;
+       }
+       &:active{
+        background-color:$underscore-list-item-color;
+        box-shadow:0px 2px 0px 0px $white;
+       }
+    }
+    /*********************************************
+    ****************                **************
+    **************** NAV RESPONSIVE **************
+    ****************      MENU      **************
+    *********************************************/
+    @include responsive-small-med{
+        .burger{
+            display:flex;
+        }
+        .logo{
+            left:6rem;
+        }
+        .navbar{
+            display:none;
+        }
+         .navbar.active{
+        position:absolute;
+        top:5rem;
+        right:0;
+        height:25vh;
+        width:100%;
+        display:flex;
+        background-color:cyan;
+        z-index:1;
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li{
+                width:100%;
+                a{
+                    color:$main-navbar;
+                    font-size:10px;
+                    display:inline-block;
+                    width:inherit;
+                    padding:.2rem .2rem .2rem 1.5rem;
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+        }
+        .register-btn{
+            display: none;
+        }
+    }
+    @include responsive-small{
+        .burger{
+            display:flex;
+        }
+        .logo{
+            left:6rem;
+        }
+        .navbar{
+            display:none;
+        }
+         .navbar.active{
+        position:absolute;
+        top:5rem;
+        right:0;
+        height:25vh;
+        width:100%;
+        display:flex;
+        background-color:cyan;
+        z-index:1;
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li{
+                width:100%;
+                a{
+                    color:$main-navbar;
+                    font-size:10px;
+                    display:inline-block;
+                    width:inherit;
+                    padding:.2rem .2rem .2rem 1.5rem;
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+        }
+        .register-btn{
+            display: none;
+        } 
+    }
+
+}
+    /*********************************************
+    ****************                **************
+    **************** LOGIN PAGE **************
+    ****************     **************
+    *********************************************/
+
+        .login-form{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .section-header{
+            width:100%;
+            background-color: $above-header-nav-color;
+            text-align: center;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:15vh;
+            h5{
+                font-size:40px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-weight: 500;
+                color:$main-navbar;
+            }
+            
+        }
+        .form{
+            margin-top:6rem;
+            width:100%;
+            height:40vh;
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            h3{
+                color: $main-navbar;
+                letter-spacing: 1px;
+                font-size:25px;
+                margin-bottom:1.2rem;
+            }
+            input[type=text], [type=password]{
+                width: 25%;
+                text-align: center;
+                height:6vh;
+                padding:1rem;
+                font-size:20px;
+                border-radius:10px;
+                background-color: $above-header-nav-color;
+                border:none;
+                outline: none;
+            }
+            .submit{
+                width:12%;
+                padding:.5em;
+                font-size:15px;
+                border-radius:10px;
+                background-color: $main-navbar;
+                outline: none;
+                border: none;
+                transition: all .4s ease-in-out;
+                font-weight:500;
+                color:$white;
+                cursor: pointer;
+                margin-bottom:.5rem;
+                &:hover{
+                    opacity:0.9;
+                    transform: translateY(10%);
+                } 
+            
+            }
+            input{
+                margin:1rem;
+            }
+            p{
+                font-size:10px;
+                margin-bottom:3rem;
+                a{
+                    color:green;
+                    text-decoration: none;
+                }
+            }
+        }
+        @include responsive-small-med{
+            .form{
+                input[type=text], [type=password]{
+                    width:30%;
+                }
+            .submit{
+               width:20%;   
+            }}
+        }
+        }
+
+
+     /*********************************************
+    ****************                **************
+    **************** PLAYER REGISTER **************
+    ****************  FIRST PAGE    **************
+    *********************************************/
+    .player-register-form{
+    height:80vh;
+    position:relative;
+    .progress{
+    width:100%;
+    height:10vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    .progress-bar{
+    width:80%; 
+    height:4vh;
+    background-color: $main-navbar;//$active-list-item-color;
+    border-radius:2rem;
+    }   
+    }
+    input[type=text], [type=tel], [type=email], [type=date], [type=password],
+    [type=number]{
+        position:absolute;
+        width: 25%;
+        text-align: center;
+        height:6vh;
+        padding:1rem;
+        font-size:20px;
+        border-radius:10px;
+        background-color: $above-header-nav-color;
+        border:none;
+        outline: none;
+    }
+    .rrss-select{
+        position:absolute;
+        width: 25%;
+        text-align: center;
+        height:12vh;
+        padding:1rem;
+        font-size:20px;
+        border-radius:10px;
+        background-color: $above-header-nav-color;
+        border:none;
+        outline: none;
+    }
+   .sex{
+    top:63%;
+    left:67%;
+    display:inline-block;
+    position:absolute;
+    width: 25%;
+    text-align: center;
+    height:6vh;
+    font-size:20px;
+    border-radius:10px;
+    background-color: $above-header-nav-color;
+    border:none;
+    outline: none;
+    }
+    input{
+    margin:1rem;  
+    }
+    #fname{
+    top:20%;
+    left:5%;
+    }
+    #fsname{
+    top:20%;
+    left:35%;
+    }
+    #ssname{
+    top: 20%;
+    left:66%;
+    }
+    #username{
+    top:40%;
+    left: 5%;
+    }
+    #passwd{
+    top:40%;
+    left:35%;
+    }
+    #email{
+    top:40%;
+    left:66%; 
+    }
+    #nickname{
+    top:60%;
+    left:5%;
+    }
+    #birthdate{
+    top:60%;
+    left:35%;
+    }
+    #back{
+     @include button-to-next-page(38%);
+    }
+    #fname-span{
+        @include span-for-form(20%,6%);
+    }
+    #fsname-span{
+        @include span-for-form(20%,36%);
+    }
+    #ssname-span{
+        @include span-for-form(20%,67%);
+    }
+    #username-span{
+        @include span-for-form(40%,6%);
+    }
+    #pwd-span{
+        @include span-for-form(40%,36%);
+    }
+    #email-span{
+        @include span-for-form(40%,67%);
+    }
+    #date-span{
+        @include span-for-form(60%,6%);
+    }
+    #apodo-span{
+        @include span-for-form(60%,36%);
+    }
+    #sex-span{
+        @include span-for-form(60%,67%);
+    }
+
+
+ /*********************************************
+    ****************                **************
+    **************** PLAYER FORM **************
+    ****************  SECOND PAGE    **************
+    *********************************************/
+
+
+    #tel{
+    top:20%;
+    left:5%;
+    }
+    #address{
+        top:20%;
+        left:35%;
+    }
+    #rrss{
+        top: 20%;
+        left:67%;
+    }
+    #federando{
+        top: 40%;
+        left:5%;
+    }
+    #club{
+        top:40%;
+        left:35%;
+    }
+    #category{
+        top:40%;
+        left:66%;
+    }
+    #class{
+        top:60%;
+        left:5%;
+    }
+    #start-date{
+        top:60%;
+        left:35%;
+    }
+    #end-date{
+        top:60%;
+        left:66%;
+    }
+    #tel-span{
+        @include span-for-form(20%,6%);
+    }
+    #address-span{
+        @include span-for-form(20%,36%);
+    }
+    #RRSS-span{
+        @include span-for-form(17%,67%);
+    }
+    #federando-span{
+        @include span-for-form(40%,6%);
+    }
+    #club-span{
+        @include span-for-form(40%,36%);
+    }
+    #categoria-span{
+        @include span-for-form(40%,67%);
+    }
+    #class-span{
+        @include span-for-form(60%,6%);
+    }
+    #start-date-span{
+        @include span-for-form(60%,36%);
+    }
+    #end-date-span{
+        @include span-for-form(60%,67%);
+    }
+
+
+
+         /*********************************************
+    ****************                **************
+    **************** PLAYER FORM **************
+    **************** THIRD PAGE    **************
+    *********************************************/
+
+
+
+    #weight{
+    top:20%;
+    left:5%;
+    }
+    #height{
+        top:20%;
+        left:35%;
+    }
+    #tshirt{
+        top: 20%;
+        left:66%;
+    }
+    #pants{
+        top: 40%;
+        left:20%;
+    }
+    #foot{
+        top:40%;
+        left:50%;
+    }
+    #weight-span{
+        @include span-for-form(20%,6%);
+    }
+    #height-span{
+        @include span-for-form(20%,36%);
+    }
+    #tshirt-span{
+        @include span-for-form(20%,67%);
+    }
+    #pants-span{
+        @include span-for-form(40%,21%);
+    }
+    #foot-span{
+        @include span-for-form(40%, 51%);
+    }
+    .submit-finish{
+        @include button-to-next-page(50%);
+    }
+    @include responsive-small-med{
+        #rrss{
+            font-size:16px;
+        }
+        #back{
+            width:15%;
+            left:35%;
+        }
+        .submit-finish{
+            width:15%;
+            left:53%;
+        }
+    }
+    }
+    
+    
+     /*********************************************
+    ****************                **************
+    ****************  USER PROFILE **************
+    ****************                **************
+    *********************************************/
+    .user-profile{
+    width:100%;
+    height:95vh;
+    background-color:$above-header-nav-color;
+    display:flex;
+    justify-content: center;
+    .profile-nav{
+        border-radius:10px; 
+        width: 30%;
+        height:inherit;
+        background-color:$main-navbar;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .image-box{
+            height:35vh;
+            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            #image{
+               width: 50%;
+               height:30vh;
+                background-color: $above-header-nav-color;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius:20px;
+            }
+        }
+        nav{    
+            height:30vh;
+            width:100%;
+            ul{
+                text-align: center;
+                width:inherit;
+                height:inherit;
+                list-style-type: none;
+                display:flex;
+                flex-direction: column;
+                justify-content:center;
+                li{
+                    font-size:17px;
+                    cursor: pointer;
+                    width:inherit;
+                        padding:.75rem;
+                    border-bottom:1px solid  white;
+                    transition: all .2s ease-in-out;
+                    i{
+                        font-size:17px;
+                        padding-right:.5rem;
+                    }
+                    &:hover{
+                        background-color: $active-list-item-color;
+                        color:$main-navbar;
+                        border:$active-list-item-color;
+                    }
+                    a{
+                        display:inline-block;
+                        width:inherit;
+                        text-decoration: none;
+                        color:$white;
+                    }
+                }
+            }
+        }
+    }
+    /********************ACCOUNT INFORMATION PAGE *************/
+    #profile-container-account{
+        width: 60%;
+        height:40vh;
+        background-color: $white;
+        border-radius:10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        #edit, #save{
+            margin-left:.7rem;
+            padding:.5rem;
+            font-size:15px;
+            border-radius:10px;
+            background-color: $main-navbar;
+            outline: none;
+            border: none;
+            transition: all .4s ease-in-out;
+            color:$white;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            &:hover{
+                opacity:0.9;
+                transform: translateY(10%);
+            }  
+            i{
+                padding-left:.3rem
+            }
+        }
+        .info{
+            //background: brown;
+            width:100%;
+            padding:1rem;
+                color:$main-navbar;
+            h3{
+                margin-top:auto;
+                text-align: center;
+                width:100%;
+                color: $main-navbar;
+                letter-spacing: 1px;
+                font-size:27px;
+                line-height: 2;
+            }
+            form{
+                display:flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                width:inherit;
+            
+            label{
+                //background-color:red;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color:$main-navbar;
+                input{
+                    padding:.45rem;
+                    outline: none;
+                    background-color: $above-header-nav-color;
+                    border:none;
+                    border-radius:10px;
+                }
+                .upload-button{
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    padding: .3rem 2rem .3rem 2rem;
+                    border-radius:10px;
+                    background:$main-navbar;
+                    color:$white;
+                    cursor:pointer;
+                    transition: all .15s ease-in-out;
+                    &:hover{
+                        opacity:0.8;
+                    }
+                    i{
+                        padding-left:.3rem;
+                    }
+                }
+                input[type=file]{
+                        position:absolute;
+                        top:0;
+                        right:-1rem;
+                    width:1%;
+                    background-color: red;
+                    opacity:0;
+                    display: block;
+                    cursor:pointer;
+                    margin:0;
+                    white-space: pre;
+                    align-items:baseline;
+                    text-overflow: ellipsis;
+                    overflow:hidden !important;
+                }
+            }
+        }
+        }
+    }
+
+        /********************PROFILE AND PERSONAL INFORMATION PAGE *************/
+
+    .profile-container{
+        background-color: $white;
+        width: 60%;
+        height: 95vh;
+        border-radius:10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        #edit, #save{
+            margin-left:.5rem;
+            padding:.5rem;
+            font-size:15px;
+            border-radius:10px;
+            background-color: $main-navbar;
+            outline: none;
+            border: none;
+            transition: all .4s ease-in-out;
+            font-weight:500;
+            color:$white;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            &:hover{
+                opacity:0.9;
+                transform: translateY(10%);
+            }  
+            i{
+                padding-left:.3rem
+            }
+        }
+        .info{
+            padding:1rem;
+            height:85vh;
+            color:$main-navbar;
+            h3{
+                margin-top:auto;
+                text-align: center;
+                width:100%;
+                color: $main-navbar;
+                letter-spacing: 1px;
+                font-size:27px;
+                line-height:2;
+            }
+            form{
+                display:flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                width:inherit;
+            label{
+                display:flex;
+                flex-direction: column;
+                width:40%;
+                color:$main-navbar;
+                input{
+                    padding:.45rem;
+                    outline: none;
+                    background-color: $above-header-nav-color;
+                    border:none;
+                    border-radius:10px;
+                }
+            }
+        }
+        }
+    }
+
+        /********************CLUB INFORMATION PAGE *************/
+    #profile-container-club{
+        width: 60%;
+        height:65vh;
+        background-color: $white;
+        border-radius:10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center ;
+        justify-content: center;
+        #edit, #save{
+            margin-left:.5rem;
+            padding:.5rem;
+            font-size:15px;
+            border-radius:10px;
+            background-color: $main-navbar;
+            outline: none;
+            border: none;
+            transition: all .4s ease-in-out;
+            font-weight:500;
+            color:$white;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            &:hover{
+                opacity:0.9;
+                transform: translateY(10%);
+            }  
+            i{
+                padding-left:.3rem
+            }
+        }
+        .info{
+            padding:1rem;
+            height:40vh;
+            color:$main-navbar;
+            h3{
+                margin-top:auto;
+                text-align: center;
+                width:100%;
+                color: $main-navbar;
+                letter-spacing: 1px;
+                font-size:27px;
+                line-height: 2;
+            }
+            form{
+                display:flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+                width:inherit;
+                label{
+                display:flex;
+                flex-direction: column;
+                width:40%;
+                color:$main-navbar;
+                input{
+                    padding:.45rem;
+                    outline: none;
+                    background-color: $above-header-nav-color;
+                    border:none;
+                    border-radius:10px;
+                }
+            }
+            #federation{
+                width:90%;
+            }
+        }
+        }  
+    }
+    @include responsive-small-med{
+        justify-content: center;
+        #user-profile-nav{
+            justify-content: center;
+        }
+        .profile-nav{
+            width:30%;
+            justify-content: space-evenly;
+            .image-box{
+                #image{
+                    height:20vh;
+                }
+            } 
+        }
+        .profile-container{
+            width:60%;
+            label{
+                font-size:15px;
+            }
+        }
+    }
+    @include responsive-small{
+        .profile-nav{
+         width:40%;
+            .image-box{
+                #image{
+                    height:15vh;
+                    width:45%;
+                }
+            } 
+        }
+        .profile-container{
+            label{
+                font-size:14px;
+            }
+        }
+        #profile-container-account{
+            height:80vh;
+        }
+    }
+    }
+
+
+    /*********************************************
+    ****************                **************
+    ****************  CONTROL PANEL **************
+    ****************                **************
+    *********************************************/
+
+    .panel{
+        background-color: $main-navbar;
+        form{
+            position: relative;
+            height:10vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            input[type=text]{
+                padding:.5rem;
+                outline: none;
+                background-color: $above-header-nav-color;
+                border:none;
+                border-top-left-radius:15px ;
+                border-bottom-left-radius: 15px;
+            }
+            button{
+                border-top-right-radius:15px ;
+                border-bottom-right-radius: 15px;
+                outline:none;
+                border:none;
+                background-color: $above-header-nav-color; 
+                padding: .5rem 1rem .5rem 1rem;
+                cursor:pointer; 
+                &:hover{
+                    background-color:$active-list-item-color;
+                    color:$white;
+                }
+            }
+        }
+        .user-box{
+            padding:1rem;
+            margin: auto;
+            width:80%;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            cursor:pointer;
+            gap:20px;
+            .user-field{
+                padding:.5rem;
+                border-radius:10px;
+               width: 30%;
+               height:10vh;
+               background-color:$above-header-nav-color;
+               display:flex;
+               align-items: center;
+               justify-content: center;
+               flex-wrap: wrap;
+               p{
+                font-weight: bold;
+                span{
+                    font-weight: normal;
+                }
+               }
+            }
+        }
+
+        @include responsive-small{
+            font-size:13px;
+            white-space: pre-wrap;
+            .user-box{
+            .user-field{
+                width:65%;
+            }
+        }
+        }
+        @include responsive-small-med{
+            font-size:16px;
+            .user-box{
+                .user-field{
+                width:55%;
+            }
+            }
+        }
+    }

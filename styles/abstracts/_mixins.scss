@@ -1,0 +1,82 @@
+@use 'variables' as *;
+@mixin button-to-next-page($left-value){
+        position:absolute;
+        top:80%;
+        left:$left-value;
+        width:10%;
+        padding:.5em;
+        font-size:15px;
+        border-radius:10px;
+        background-color: $main-navbar;
+        outline: none;
+        border: none;
+        transition: all .4s ease-in-out;
+        font-weight:500;
+        color:$white;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        &:hover{
+            opacity:0.9;
+            transform: translateY(10%);
+        } 
+    }
+
+    @mixin span-for-form($topval, $leftval){
+        top:$topval;
+        left:$leftval;
+        position:absolute;
+        text-transform: capitalize;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        white-space: nowrap;
+        line-height: 1;
+        color: #1b2733;
+    }
+
+    @mixin responsive-small-med{
+        @media screen and (max-width:968px){
+            @content;
+        }
+    }
+   
+    // @mixin profiles($profile-container-width, $profile-container-height, 
+    // $info-height, $h3-line-height){
+    //         width: $profile-container-height;
+    //         height: $profile-container-height;
+    //         background-color: $white;
+    //         border-radius:10px;
+    //         .info{
+    //             padding:1rem;
+    //             height:$info-height;
+    //             display:flex;
+    //             flex-wrap: wrap;
+    //             justify-content: space-evenly;
+    //             h3{
+    //                 margin-top:auto;
+    //                 text-align: center;
+    //                 width:100%;
+    //                 color: $main-navbar;
+    //                 letter-spacing: 1px;
+    //                 font-size:27px;
+    //                 line-height:$h3-line-height;
+    //             }
+    //             label{
+    //                 display:flex;
+    //                 flex-direction: column;
+    //                 width:40%;
+    //                 color:$main-navbar;
+    //                 .input{
+    //                     padding:.45rem;
+    //                     outline: none;
+    //                     background-color: $above-header-nav-color;
+    //                     border:none;
+    //                     border-radius:10px;
+    //                     font-size:14px;
+                        
+    //                 }
+    //             }
+    //         }
+        
+    // }

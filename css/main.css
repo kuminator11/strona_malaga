@@ -1,0 +1,1248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*********************************************
+    ****************                **************
+    **************** NAVIGATION BAR **************
+    ****************                **************
+    *********************************************/
+.above-header-info {
+  position: relative;
+  width: 100%;
+  height: 4vh;
+  background-color: #EAEAEA;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  /*********************************************
+      ****************                **************
+      **************** RESPONSIVE ABOVE **************
+      ****************  HEADER INFO          **************
+      *********************************************/
+}
+.above-header-info h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-style: normal;
+  color: #082548;
+}
+.above-header-info .info-left {
+  position: absolute;
+  left: 11rem;
+}
+.above-header-info .info-right {
+  position: absolute;
+  right: 8rem;
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  .above-header-info {
+    display: none;
+  }
+}
+@media screen and (max-width: 668px) {
+  .above-header-info {
+    display: none;
+  }
+}
+
+header {
+  width: 100%;
+  height: 13vh;
+  background-color: #082548;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /*********************************************
+  ****************                **************
+  **************** NAV RESPONSIVE **************
+  ****************      MENU      **************
+  *********************************************/
+}
+header .logo {
+  position: absolute;
+  left: 13rem;
+  width: 20%;
+  height: 10vh;
+  text-align: center;
+}
+header .burger {
+  position: absolute;
+  right: 7rem;
+  display: none;
+  cursor: pointer;
+}
+header .burger i {
+  color: #FFFFFF;
+  font-size: 3.5vh;
+}
+header .navbar {
+  position: absolute;
+  right: 24rem;
+  width: 35%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+header .navbar ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+header .navbar ul a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+header .navbar ul a:hover {
+  color: #5DE2DC;
+}
+header .navbar ul a::after {
+  content: "";
+  display: block;
+  background-color: #5CE5D0;
+  height: 1px;
+  width: 0;
+  margin-top: 1px;
+}
+header .navbar ul a:hover::after {
+  width: 100%;
+}
+header .register-btn {
+  color: #082548;
+  font-size: 14px;
+  text-decoration: none;
+  position: absolute;
+  right: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 0px 0px #5CE5D0;
+  border-radius: 4px 4px 4px 4px;
+  width: 13%;
+  font-weight: 500;
+  height: 6.5vh;
+  transition: all 0.3s ease-in-out;
+}
+header .register-btn:hover {
+  background-color: #5CE5D0;
+  box-shadow: 0px 2px 0px 0px #FFFFFF;
+}
+header .register-btn:active {
+  background-color: #5CE5D0;
+  box-shadow: 0px 2px 0px 0px #FFFFFF;
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  header .burger {
+    display: flex;
+  }
+  header .logo {
+    left: 6rem;
+  }
+  header .navbar {
+    display: none;
+  }
+  header .navbar.active {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    background-color: cyan;
+    z-index: 1;
+  }
+  header .navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .navbar.active ul li {
+    width: 100%;
+  }
+  header .navbar.active ul li a {
+    color: #082548;
+    font-size: 10px;
+    display: inline-block;
+    width: inherit;
+    padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+  }
+  header .navbar.active ul li a::after {
+    display: none;
+  }
+  header .register-btn {
+    display: none;
+  }
+}
+@media screen and (max-width: 668px) {
+  header .burger {
+    display: flex;
+  }
+  header .logo {
+    left: 6rem;
+  }
+  header .navbar {
+    display: none;
+  }
+  header .navbar.active {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    background-color: cyan;
+    z-index: 1;
+  }
+  header .navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .navbar.active ul li {
+    width: 100%;
+  }
+  header .navbar.active ul li a {
+    color: #082548;
+    font-size: 10px;
+    display: inline-block;
+    width: inherit;
+    padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+  }
+  header .navbar.active ul li a::after {
+    display: none;
+  }
+  header .register-btn {
+    display: none;
+  }
+}
+
+/*********************************************
+****************                **************
+**************** LOGIN PAGE **************
+****************     **************
+*********************************************/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.login-form .section-header {
+  width: 100%;
+  background-color: #EAEAEA;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+}
+.login-form .section-header h5 {
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #082548;
+}
+.login-form .form {
+  margin-top: 6rem;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.login-form .form h3 {
+  color: #082548;
+  letter-spacing: 1px;
+  font-size: 25px;
+  margin-bottom: 1.2rem;
+}
+.login-form .form input[type=text], .login-form .form [type=password] {
+  width: 25%;
+  text-align: center;
+  height: 6vh;
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  border: none;
+  outline: none;
+}
+.login-form .form .submit {
+  width: 12%;
+  padding: 0.5em;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.login-form .form .submit:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+.login-form .form input {
+  margin: 1rem;
+}
+.login-form .form p {
+  font-size: 10px;
+  margin-bottom: 3rem;
+}
+.login-form .form p a {
+  color: green;
+  text-decoration: none;
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  .login-form .form input[type=text], .login-form .form [type=password] {
+    width: 30%;
+  }
+  .login-form .form .submit {
+    width: 20%;
+  }
+}
+
+/*********************************************
+****************                **************
+**************** PLAYER REGISTER **************
+****************  FIRST PAGE    **************
+*********************************************/
+.player-register-form {
+  height: 80vh;
+  position: relative;
+  /*********************************************
+     ****************                **************
+     **************** PLAYER FORM **************
+     ****************  SECOND PAGE    **************
+     *********************************************/
+  /*********************************************
+  ****************                **************
+  **************** PLAYER FORM **************
+  **************** THIRD PAGE    **************
+  *********************************************/
+}
+.player-register-form .progress {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-register-form .progress .progress-bar {
+  width: 80%;
+  height: 4vh;
+  background-color: #082548;
+  border-radius: 2rem;
+}
+.player-register-form input[type=text], .player-register-form [type=tel], .player-register-form [type=email], .player-register-form [type=date], .player-register-form [type=password],
+.player-register-form [type=number] {
+  position: absolute;
+  width: 25%;
+  text-align: center;
+  height: 6vh;
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  border: none;
+  outline: none;
+}
+.player-register-form .rrss-select {
+  position: absolute;
+  width: 25%;
+  text-align: center;
+  height: 12vh;
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  border: none;
+  outline: none;
+}
+.player-register-form .sex {
+  top: 63%;
+  left: 67%;
+  display: inline-block;
+  position: absolute;
+  width: 25%;
+  text-align: center;
+  height: 6vh;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  border: none;
+  outline: none;
+}
+.player-register-form input {
+  margin: 1rem;
+}
+.player-register-form #fname {
+  top: 20%;
+  left: 5%;
+}
+.player-register-form #fsname {
+  top: 20%;
+  left: 35%;
+}
+.player-register-form #ssname {
+  top: 20%;
+  left: 66%;
+}
+.player-register-form #username {
+  top: 40%;
+  left: 5%;
+}
+.player-register-form #passwd {
+  top: 40%;
+  left: 35%;
+}
+.player-register-form #email {
+  top: 40%;
+  left: 66%;
+}
+.player-register-form #nickname {
+  top: 60%;
+  left: 5%;
+}
+.player-register-form #birthdate {
+  top: 60%;
+  left: 35%;
+}
+.player-register-form #back {
+  position: absolute;
+  top: 80%;
+  left: 38%;
+  width: 10%;
+  padding: 0.5em;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.player-register-form #back:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+.player-register-form #fname-span {
+  top: 20%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #fsname-span {
+  top: 20%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #ssname-span {
+  top: 20%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #username-span {
+  top: 40%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #pwd-span {
+  top: 40%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #email-span {
+  top: 40%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #date-span {
+  top: 60%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #apodo-span {
+  top: 60%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #sex-span {
+  top: 60%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #tel {
+  top: 20%;
+  left: 5%;
+}
+.player-register-form #address {
+  top: 20%;
+  left: 35%;
+}
+.player-register-form #rrss {
+  top: 20%;
+  left: 67%;
+}
+.player-register-form #federando {
+  top: 40%;
+  left: 5%;
+}
+.player-register-form #club {
+  top: 40%;
+  left: 35%;
+}
+.player-register-form #category {
+  top: 40%;
+  left: 66%;
+}
+.player-register-form #class {
+  top: 60%;
+  left: 5%;
+}
+.player-register-form #start-date {
+  top: 60%;
+  left: 35%;
+}
+.player-register-form #end-date {
+  top: 60%;
+  left: 66%;
+}
+.player-register-form #tel-span {
+  top: 20%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #address-span {
+  top: 20%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #RRSS-span {
+  top: 17%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #federando-span {
+  top: 40%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #club-span {
+  top: 40%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #categoria-span {
+  top: 40%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #class-span {
+  top: 60%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #start-date-span {
+  top: 60%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #end-date-span {
+  top: 60%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #weight {
+  top: 20%;
+  left: 5%;
+}
+.player-register-form #height {
+  top: 20%;
+  left: 35%;
+}
+.player-register-form #tshirt {
+  top: 20%;
+  left: 66%;
+}
+.player-register-form #pants {
+  top: 40%;
+  left: 20%;
+}
+.player-register-form #foot {
+  top: 40%;
+  left: 50%;
+}
+.player-register-form #weight-span {
+  top: 20%;
+  left: 6%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #height-span {
+  top: 20%;
+  left: 36%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #tshirt-span {
+  top: 20%;
+  left: 67%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #pants-span {
+  top: 40%;
+  left: 21%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form #foot-span {
+  top: 40%;
+  left: 51%;
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+  line-height: 1;
+  color: #1b2733;
+}
+.player-register-form .submit-finish {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 10%;
+  padding: 0.5em;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.player-register-form .submit-finish:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  .player-register-form #rrss {
+    font-size: 16px;
+  }
+  .player-register-form #back {
+    width: 15%;
+    left: 35%;
+  }
+  .player-register-form .submit-finish {
+    width: 15%;
+    left: 53%;
+  }
+}
+
+/*********************************************
+****************                **************
+****************  USER PROFILE **************
+****************                **************
+*********************************************/
+.user-profile {
+  width: 100%;
+  height: 95vh;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: center;
+  /********************ACCOUNT INFORMATION PAGE *************/
+  /********************PROFILE AND PERSONAL INFORMATION PAGE *************/
+  /********************CLUB INFORMATION PAGE *************/
+}
+.user-profile .profile-nav {
+  border-radius: 10px;
+  width: 30%;
+  height: inherit;
+  background-color: #082548;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.user-profile .profile-nav .image-box {
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-profile .profile-nav .image-box #image {
+  width: 50%;
+  height: 30vh;
+  background-color: #EAEAEA;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+.user-profile .profile-nav nav {
+  height: 30vh;
+  width: 100%;
+}
+.user-profile .profile-nav nav ul {
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-profile .profile-nav nav ul li {
+  font-size: 17px;
+  cursor: pointer;
+  width: inherit;
+  padding: 0.75rem;
+  border-bottom: 1px solid white;
+  transition: all 0.2s ease-in-out;
+}
+.user-profile .profile-nav nav ul li i {
+  font-size: 17px;
+  padding-right: 0.5rem;
+}
+.user-profile .profile-nav nav ul li:hover {
+  background-color: #5DE2DC;
+  color: #082548;
+  border: #5DE2DC;
+}
+.user-profile .profile-nav nav ul li a {
+  display: inline-block;
+  width: inherit;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.user-profile #profile-container-account {
+  width: 60%;
+  height: 40vh;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.user-profile #profile-container-account #edit, .user-profile #profile-container-account #save {
+  margin-left: 0.7rem;
+  padding: 0.5rem;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.user-profile #profile-container-account #edit:hover, .user-profile #profile-container-account #save:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+.user-profile #profile-container-account #edit i, .user-profile #profile-container-account #save i {
+  padding-left: 0.3rem;
+}
+.user-profile #profile-container-account .info {
+  width: 100%;
+  padding: 1rem;
+  color: #082548;
+}
+.user-profile #profile-container-account .info h3 {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  color: #082548;
+  letter-spacing: 1px;
+  font-size: 27px;
+  line-height: 2;
+}
+.user-profile #profile-container-account .info form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: inherit;
+}
+.user-profile #profile-container-account .info form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #082548;
+}
+.user-profile #profile-container-account .info form label input {
+  padding: 0.45rem;
+  outline: none;
+  background-color: #EAEAEA;
+  border: none;
+  border-radius: 10px;
+}
+.user-profile #profile-container-account .info form label .upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.3rem 2rem 0.3rem 2rem;
+  border-radius: 10px;
+  background: #082548;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.user-profile #profile-container-account .info form label .upload-button:hover {
+  opacity: 0.8;
+}
+.user-profile #profile-container-account .info form label .upload-button i {
+  padding-left: 0.3rem;
+}
+.user-profile #profile-container-account .info form label input[type=file] {
+  position: absolute;
+  top: 0;
+  right: -1rem;
+  width: 1%;
+  background-color: red;
+  opacity: 0;
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  white-space: pre;
+  align-items: baseline;
+  text-overflow: ellipsis;
+  overflow: hidden !important;
+}
+.user-profile .profile-container {
+  background-color: #FFFFFF;
+  width: 60%;
+  height: 95vh;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.user-profile .profile-container #edit, .user-profile .profile-container #save {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.user-profile .profile-container #edit:hover, .user-profile .profile-container #save:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+.user-profile .profile-container #edit i, .user-profile .profile-container #save i {
+  padding-left: 0.3rem;
+}
+.user-profile .profile-container .info {
+  padding: 1rem;
+  height: 85vh;
+  color: #082548;
+}
+.user-profile .profile-container .info h3 {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  color: #082548;
+  letter-spacing: 1px;
+  font-size: 27px;
+  line-height: 2;
+}
+.user-profile .profile-container .info form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: inherit;
+}
+.user-profile .profile-container .info form label {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  color: #082548;
+}
+.user-profile .profile-container .info form label input {
+  padding: 0.45rem;
+  outline: none;
+  background-color: #EAEAEA;
+  border: none;
+  border-radius: 10px;
+}
+.user-profile #profile-container-club {
+  width: 60%;
+  height: 65vh;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.user-profile #profile-container-club #edit, .user-profile #profile-container-club #save {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #082548;
+  outline: none;
+  border: none;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.user-profile #profile-container-club #edit:hover, .user-profile #profile-container-club #save:hover {
+  opacity: 0.9;
+  transform: translateY(10%);
+}
+.user-profile #profile-container-club #edit i, .user-profile #profile-container-club #save i {
+  padding-left: 0.3rem;
+}
+.user-profile #profile-container-club .info {
+  padding: 1rem;
+  height: 40vh;
+  color: #082548;
+}
+.user-profile #profile-container-club .info h3 {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  color: #082548;
+  letter-spacing: 1px;
+  font-size: 27px;
+  line-height: 2;
+}
+.user-profile #profile-container-club .info form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: inherit;
+}
+.user-profile #profile-container-club .info form label {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  color: #082548;
+}
+.user-profile #profile-container-club .info form label input {
+  padding: 0.45rem;
+  outline: none;
+  background-color: #EAEAEA;
+  border: none;
+  border-radius: 10px;
+}
+.user-profile #profile-container-club .info form #federation {
+  width: 90%;
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  .user-profile {
+    justify-content: center;
+  }
+  .user-profile #user-profile-nav {
+    justify-content: center;
+  }
+  .user-profile .profile-nav {
+    width: 30%;
+    justify-content: space-evenly;
+  }
+  .user-profile .profile-nav .image-box #image {
+    height: 20vh;
+  }
+  .user-profile .profile-container {
+    width: 60%;
+  }
+  .user-profile .profile-container label {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 668px) {
+  .user-profile .profile-nav {
+    width: 40%;
+  }
+  .user-profile .profile-nav .image-box #image {
+    height: 15vh;
+    width: 45%;
+  }
+  .user-profile .profile-container label {
+    font-size: 14px;
+  }
+  .user-profile #profile-container-account {
+    height: 80vh;
+  }
+}
+
+/*********************************************
+****************                **************
+****************  CONTROL PANEL **************
+****************                **************
+*********************************************/
+.panel {
+  background-color: #082548;
+}
+.panel form {
+  position: relative;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel form input[type=text] {
+  padding: 0.5rem;
+  outline: none;
+  background-color: #EAEAEA;
+  border: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.panel form button {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  outline: none;
+  border: none;
+  background-color: #EAEAEA;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  cursor: pointer;
+}
+.panel form button:hover {
+  background-color: #5DE2DC;
+  color: #FFFFFF;
+}
+.panel .user-box {
+  padding: 1rem;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  cursor: pointer;
+  gap: 20px;
+}
+.panel .user-box .user-field {
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 30%;
+  height: 10vh;
+  background-color: #EAEAEA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.panel .user-box .user-field p {
+  font-weight: bold;
+}
+.panel .user-box .user-field p span {
+  font-weight: normal;
+}
+@media screen and (max-width: 668px) {
+  .panel {
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  .panel .user-box .user-field {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 668px) and (max-width: 1068px) {
+  .panel {
+    font-size: 16px;
+  }
+  .panel .user-box .user-field {
+    width: 55%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
